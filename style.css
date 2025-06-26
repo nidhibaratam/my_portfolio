@@ -1,0 +1,42 @@
+/* Custom Tailwind CSS configuration for specific colors and font */
+/* @tailwind directives are necessary for Tailwind to process its utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* No :root variables or custom color utility classes needed here anymore.
+   Tailwind is configured in index.html to generate these automatically. */
+
+/* Apply Inter font family to the body using Tailwind's font-inter class,
+   which is defined in the tailwind.config. */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth transitions for interactive elements */
+.transition-colors-transform {
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Styling for Credly badges */
+.badge-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow badges to wrap on smaller screens */
+    gap: 1rem; /* Space between badges */
+    justify-content: center; /* Center badges in the container */
+}
+.badge-container > div {
+    border-radius: 0.5rem; /* Rounded corners for badge containers */
+    overflow: hidden; /* Ensure content respects border-radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease; /* Lift effect on hover */
+}
+.badge-container > div:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Custom scroll-behavior for smooth scrolling to anchor links */
+html {
+    scroll-behavior: smooth;
+}
