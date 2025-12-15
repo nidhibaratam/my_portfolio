@@ -3,406 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Baratam NidhiShri - Portfolio</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'mindaro': { DEFAULT: '#d9ed92', 100: '#36420b', 200: '#6c8415', 300: '#a2c520', 400: '#c3e250', 500: '#d9ed92', 600: '#e1f1a7', 700: '#e8f4bd', 800: '#f0f8d3', 900: '#f7fbe9' },
-                        'light-green': { DEFAULT: '#b5e48c', 100: '#233b0e', 200: '#46771c', 300: '#6ab22a', 400: '#8ed650', 500: '#b5e48c', 600: '#c4e9a2', 700: '#d2efba', 800: '#e1f4d1', 900: '#f0fae8' },
-                        'emerald': { DEFAULT: '#76c893', 100: '#122d1c', 200: '#245a37', 300: '#368853', 400: '#48b56e', 500: '#76c893', 600: '#90d3a7', 700: '#acdebd', 800: '#c8e9d3', 900: '#e3f4e9' },
-                        'keppel': { DEFAULT: '#52b69a', 100: '#10251f', 200: '#1f4b3e', 300: '#2f705e', 400: '#3f967d', 500: '#52b69a', 600: '#75c5ae', 700: '#97d4c3', 800: '#bae2d7', 900: '#dcf1eb' },
-                        'verdigris': { DEFAULT: '#34a0a4', 100: '#0a2021', 200: '#154041', 300: '#1f5f62', 400: '#297f82', 500: '#34a0a4', 600: '#4bc2c6', 700: '#78d1d4', 800: '#a5e1e3', 900: '#d2f0f1' },
-                        'bondi-blue': { DEFAULT: '#168aad', 100: '#041b22', 200: '#093745', 300: '#0d5267', 400: '#126d89', 500: '#168aad', 600: '#1fb4e2', 700: '#57c7e9', 800: '#8fdaf0', 900: '#c7ecf8' },
-                        'cerulean': { DEFAULT: '#1a759f', 100: '#051720', 200: '#0a2e3f', 300: '#0f465f', 400: '#155d7e', 500: '#1a759f', 600: '#239dd6', 700: '#57b7e4', 800: '#8fcfed', 900: '#c7e7f6' },
-                        'lapis-lazuli': { DEFAULT: '#1e6091', 100: '#06131d', 200: '#0c263a', 300: '#123956', 400: '#184b73', 500: '#1e6091', 600: '#2983c8', 700: '#57a3dd', 800: '#8fc2e8', 900: '#c7e0f4' },
-                        'indigo-dye': { DEFAULT: '#184e77', 100: '#051018', 200: '#0a1f2f', 300: '#0f2f47', 400: '#133e5f', 500: '#184e77', 600: '#2576b3', 700: '#489bda', 800: '#85bce6', 900: '#c2def3' },
-                        
-                        /* Retaining generic black and white for direct usage */
-                        'custom-black': '#000000',     /* Black */
-                        'custom-white': '#ffffff',     /* White */
-                    },
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+    <title>Baratam Nidhishri - Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body class="bg-custom-white text-custom-black min-h-screen flex flex-col font-inter">
+<body>
 
-    <header class="bg-indigo-dye py-4 shadow-lg fixed top-0 w-full z-50">
-        <nav class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-custom-white text-2xl md:text-3xl font-extrabold rounded-lg px-3 py-1 hover:text-mindaro transition-colors-transform">
-                Baratam Nidhishri
-            </h1>
-            <ul class="hidden md:flex space-x-6">
-                <li><a href="#about" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">About</a></li>
-                <li><a href="#skills" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">Skills</a></li>
-                <li><a href="#projects" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">Projects</a></li>
-                <li><a href="#publications" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">Blog Posts</a></li>
-                <li><a href="#education" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">Education</a></li>
-                <li><a href="#Achievements" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">Achievements</a></li>
-                <li><a href="#certifications" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">Certifications</a></li>
-                <li><a href="#badges" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">Badges</a></li>
-                <li><a href="#extracurricular" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">Activities</a></li>
-                <li><a href="#contact-footer" class="text-custom-white text-lg font-medium hover:text-mindaro transition-colors-transform py-2 px-3 rounded-md">Contact</a></li>
-            </ul>
-            <button id="mobile-menu-button" class="md:hidden text-custom-white focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
-                </svg>
-            </button>
+    <header class="header">
+        <h1>BARATAM NIDHISHRI</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-indigo-dye text-custom-white mt-2 pb-2">
-            <a href="#about" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">About</a>
-            <a href="#skills" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">Skills</a>
-            <a href="#projects" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">Projects</a>
-            <a href="#partyrock-app" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">My App</a>
-            <a href="#publications" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">Blog Posts</a>
-            <a href="#education" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">Education</a>
-            <a href="#Achievements" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">Achievements</a>
-            <a href="#certifications" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">Certifications</a>
-            <a href="#badges" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">Badges</a>
-            <a href="#extracurricular" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">Activities</a>
-            <a href="#contact-footer" class="block px-4 py-3 text-lg font-medium hover:bg-mindaro transition-colors-transform">Contact</a>
-        </div>
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
     </header>
 
-    <main class="flex-grow pt-20"> <section id="hero" class="bg-mindaro py-16 md:py-24 text-center">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-custom-black leading-tight mb-6">
-                    Driving Innovation at the Intersection of AI & Engineering
-                </h2>
-                <p class="text-lg md:text-xl text-custom-black max-w-3xl mx-auto">
-                    A passionate pre-final year Electronics & Communications Engineering student with a minor in AI & Data Science. I thrive on leveraging robust programming skills in Python, C, and Java to develop impactful solutions. Eager to contribute to cutting-edge projects, my expertise spans Machine Learning, Deep Learning, Data Structures, and Algorithms, with a growing foundation in Cloud Computing and DevOps.
-                </p>
-            </div>
+    <main class="container">
+        <section id="about" class="card profile-header">
+            <h2>Hello, I'm Baratam Nidhishri</h2>
+            <p class="tagline">B.Tech Student specializing in Electronics and Communications Engineering with a minor in AI/Data Science.</p>
+            <p class="summary">I am passionate about building efficient systems, solving complex problems, and contributing to open-source projects. My expertise includes DSA & Competitive Programming (1700+ LeetCode rating), embedded systems (8051, FPGA), and modern AI/ML development (LSTM, Neural Networks).</p>
+            
+            <div class="quick-links">
+                 <a href="https://www.linkedin.com/in/baratamnidhishri/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                 <a href="https://github.com/nidhibaratam" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+             </div>
         </section>
 
-        <section id="about" class="bg-custom-white py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl text-center md:text-left">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-6 border-b-2 border-mindaro pb-2 inline-block">About Me</h2>
-                <p class="text-lg text-custom-black mb-4 leading-relaxed">
-                    I'm a highly driven and curious individual dedicated to exploring the transformative power of Artificial Intelligence and Data Science. As an Electronics & Communications Engineering student with a strong minor in AI/DS, I'm adept at blending theoretical knowledge with practical application. I'm passionate about developing intelligent systems, optimizing complex algorithms, and tackling challenging problems that contribute to technological advancement. My commitment to continuous learning and hands-on project experience fuels my aspiration to excel in Machine Learning and AI research, ultimately driving real-world impact.
-                </p>
+        <section id="education" class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <div class="item">
+                <p class="title">THE LNM Institute of Information Technology</p>
+                <p class="subtitle">B.Tech, Electronics and communications engineering minor in Artificial Intelligence and Data Science</p>
+                <p class="details">Aug 2023 – Aug 2027 | Jaipur, India</p>
             </div>
-        </section>
-
-        <section id="skills" class="bg-mindaro-900 py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-8 text-center border-b-2 border-mindaro pb-2 inline-block mx-auto">Skills</h2>
-
-                <div class="mb-10 p-6 bg-custom-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Programming Languages</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                        <li>Python</li>
-                        <li>C</li>
-                        <li>Java</li>
-                        <li>Embedded C</li>
-                        <li>VHDL</li>
-                    </ul>
-                </div>
-
-                <div class="mb-10 p-6 bg-custom-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Artificial Intelligence & Machine Learning</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                        <li>Neural Networks</li>
-                        <li>Deep Learning</li>
-                        <li>TensorFlow</li>
-                        <li>Keras API</li>
-                        <li>Long Short-Term Memory (LSTM)</li>
-                        <li>Machine Learning Algorithms</li>
-                        <li>Classification</li>
-                        <li>Time Series Analysis</li>
-                        <li>Feature Engineering</li>
-                        <li>Data Preprocessing</li>
-                        <li>Model Evaluation</li>
-                        <li>Scikit-learn</li>
-                    </ul>
-                </div>
-
-                <div class="mb-10 p-6 bg-custom-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Data Science & Analytics</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2 grid grid-cols-1 sm:grid-cols-2">
-                        <li>Data Visualization</li>
-                        <li>Data Structures</li>
-                        <li>Algorithms</li>
-                        <li>Algorithm Design</li>
-                    </ul>
-                </div>
-
-                <div class="mb-10 p-6 bg-custom-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Hardware Design & Embedded Systems</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                        <li>Microcontrollers (8051)</li>
-                        <li>Microprocessor (8085)</li>
-                        <li>Embedded C</li>
-                        <li>VHDL</li>
-                        <li>Xilinx Vivado</li>
-                        <li>Digital Circuit Design</li>
-                        <li>Circuit Simulation</li>
-                        <li>MULTISIM</li>
-                    </ul>
-                </div>
-
-                <div class="mb-10 p-6 bg-custom-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Version Control</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2 grid grid-cols-1 sm:grid-cols-2">
-                        <li>Git</li>
-                        <li>GitHub</li>
-                    </ul>
-                </div>
-
-                <div class="p-6 bg-custom-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Software & Tools</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2 grid grid-cols-1 sm:grid-cols-2">
-                        <li>Kaggle</li>
-                        <li>Google Colab</li>
-                        <li>Jupyter Notebooks</li>
-                    </ul>
-                </div>
+            
+            <div class="item">
+                <p class="title">Timpany School (ISC)</p>
+                <p class="subtitle">12th Grade</p>
+                <p class="details">Mar 2021 – Jan 2023 | Visakhapatnam, India</p>
+                <ul class="scores-list">
+                    <li>Math: 98%</li>
+                    <li>Science: 90.25%</li>
+                    <li>CS: 94%</li>
+                </ul>
             </div>
-        </section>
-
-        <section id="projects" class="bg-custom-white py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-8 text-center border-b-2 border-mindaro pb-2 inline-block mx-auto">Projects</h2>
-
-                <article class="mb-12 p-8 bg-mindaro-900 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Airfare Predictor</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2">
-                        <li>Developed independently for college Data Science coursework.</li>
-                        <li>Utilized <strong>LSTM neural networks</strong> and <strong>time series analysis</strong> on Goibibo dataset from Kaggle.</li>
-                        <li>Addressed challenges in <strong>feature engineering</strong> and <strong>multi-output prediction</strong> (price and duration simultaneously).</li>
-                        <li>Implemented robust <strong>data preprocessing</strong>, including cyclic encoding for temporal features.</li>
-                        <li>Achieved <strong>MAE of 0.0513</strong> on scaled test data and <strong>90.99% prediction accuracy</strong> for flight prices and durations.</li>
-                        <li class="flex flex-wrap gap-x-4 gap-y-2 mt-4">
-                            <a href="https://medium.com/@nidhibaratam2005/decoding-the-skies-my-journey-building-an-airfare-predictor-6a22e602873a" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                                Medium Blog Post
-                            </a>
-                            <a href="https://colab.research.google.com/gist/nidhibaratam/9264b2d7cd515eb8067273fce0bd4364/airfare-predictor-final-version.ipynb" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                                Google Colab
-                            </a>
-                            <a href="https://github.com/nidhibaratam/Airfare-Predictor/blob/main/airfare_predictor_final_version.ipynb" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                                GitHub Repository
-                            </a>
-                            <a href="https://drive.google.com/file/d/14lEiWjOFOG0LrFlU0yhw-gKpMWEn42LP/view" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                                Video
-                            </a>
-                        </li>
-                    </ul>
-                </article>
-
-                <article class="mb-12 p-8 bg-mindaro-900 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Handwritten Digit Recognition Neural Network</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2">
-                        <li>Collaborated in a team to design and implement a <strong>multi-layer Artificial Neural Network (ANN)</strong> for handwritten digit recognition using the <strong>MNIST dataset</strong>.</li>
-                        <li>Achieved <strong>97.41% accuracy</strong> on the test set after 20 epochs, demonstrating proficiency in deep learning and image classification.</li>
-                        <li class="flex flex-wrap gap-x-4 gap-y-2 mt-4">
-                            <a href="https://medium.com/@nidhibaratam2005/from-pixels-to-predictions-our-first-dive-into-image-recognition-373cec7cbacc" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                                Medium Blog Post
-                            </a>
-                            <a href="https://github.com/nidhibaratam/Handwritten-Digit-Recognition-with-Neural-Networks" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                                GitHub Repository
-                            </a>
-                        </li>
-                    </ul>
-                </article>
-
-                 <article class="mb-12 p-8 bg-mindaro-900 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Unlocking Nature’s Secrets: Iris Flower Classification with ANN</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2">
-                        <li>Developed an <strong>Artificial Neural Network (ANN)</strong> using <strong>TensorFlow's Keras API</strong> to classify Iris flower species.</li>
-                        <li>Utilized the <strong>Iris dataset</strong> and implemented <strong>One-Hot Encoding, Train-Test Split, and StandardScaler</strong> for preprocessing.</li>
-                        <li>Achieved <strong>~93% accuracy</strong> on unseen Iris flowers after 75 epochs.</li>
-                        <li class="flex flex-wrap gap-x-4 gap-y-2 mt-4">
-                            <a href="https://medium.com/@nidhibaratam2005/unlocking-natures-secrets-how-we-taught-ai-to-identify-iris-flowers-3818d1662bea" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                                Medium Blog Post
-                            </a>
-                            <a href="https://github.com/nidhibaratam/Predicting-the-species-of-an-unknown-iris-type-flower" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                                GitHub Repository
-                            </a>
-                            <a href="https://colab.research.google.com/gist/nidhibaratam/790f82f4434a3027a0e4403762e437c9/predicting-the-species-of-an-unknown-iris-type-flower.ipynb" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                                Google Colab
-                            </a>
-                        </li>
-                    </ul>
-                </article>
-
-
-                <article class="p-8 bg-mindaro-900 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-4">Pack Your Bags! Travel Companion</h3>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2">
-                        <li>Developed as a smart packing assistant on <strong>the PartyRock platform</strong>.</li>
-                        <li>Generates <strong>personalized packing lists</strong> by considering user inputs such as destination, trip duration, and planned activities.</li>
-                        <li>Aims to provide effortless and stress-free packing, ensuring travelers don't forget essential items.</li>
-                        <li class="flex flex-wrap gap-x-4 gap-y-2 mt-4"> 
-                            <a href="https://partyrock.aws/u/NidhiShriBaratam/4S3aNiwp1/Pack-Your-Bags!-Travel-Companion" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-1">
-                           Check out the app on PartyRock here!
-                        </a>
-                        </li>
-                    </ul>
-                </article>
-
-               
-            </div>
-        </section>
-
-    
-
-        <section id="publications" class="bg-custom-white py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-8 text-center border-b-2 border-mindaro pb-2 inline-block mx-auto">Blog Posts</h2>
-                <ul class="list-disc list-inside text-lg text-custom-black space-y-3">
-                    <li><a href="https://medium.com/@nidhibaratam2005/unlocking-natures-secrets-how-we-taught-ai-to-identify-iris-flowers-3818d1662bea" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform flex items-center gap-2">Unlocking Nature’s Secrets: How We Taught AI to Identify Iris Flowers!</a></li>
-                    <li><a href="https://medium.com/@nidhibaratam2005/from-pixels-to-predictions-our-first-dive-into-image-recognition-373cec7cbacc" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform flex items-center gap-2">From Pixels to Predictions: Our First Dive into Image Recognition</a></li>
-                    <li><a href="https://medium.com/@nidhibaratam2005/decoding-the-skies-my-journey-building-an-airfare-predictor-6a22e602873a" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform flex items-center gap-2">Decoding the Skies: My Journey Building an Airfare Predictor</a></li>
+            
+            <div class="item">
+                <p class="title">Timpany School (ICSE)</p>
+                <p class="subtitle">10th Grade</p>
+                <p class="details">Mar 2014 – 2020 | Visakhapatnam, India</p>
+                <ul class="scores-list">
+                    <li>Math: 95%</li>
+                    <li>Science: 95%</li>
+                    <li>CS: 100%</li>
                 </ul>
             </div>
         </section>
 
-        <section id="education" class="bg-mindaro-900 py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-8 text-center border-b-2 border-mindaro pb-2 inline-block mx-auto">Education</h2>
-                <article class="mb-10 p-8 bg-custom-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-2">THE LNM INSTITUTE OF INFORMATION TECHNOLOGY</h3>
-                    <p class="text-lg text-custom-black mb-1">Bachelors in Technology, Electronics and communications, Artificial Intelligence and Data Science</p>
-                    <p class="text-md text-custom-dark-gray mb-4">Aug 2023 - Aug 2027 | Jaipur, India</p>
-                    <h4 class="text-xl font-semibold text-indigo-dye mb-3">Relevant Coursework:</h4>
-                    <ul class="list-disc list-inside text-lg text-custom-black space-y-2">
-                        <li>Digital Systems & Circuits: Design of logic gates, flip-flops, and counters.</li>
-                        <li>Embedded Systems: Microcontroller programming (8051, 8085) in Embedded C.</li>
-                        <li>Signals and Systems: Signal processing basics and applications.</li>
-                        <li>Network Analysis & Synthesis: Fundamentals of circuit analysis.</li>
-                        <li>Mathematics: Calculus, Linear Algebra, Probability, and Statistics.</li>
-                        <li>Design and Analysis of Algorithms: Analysing and implementing basic algorithms (sorting, searching).</li>
-                        <li>Data Structures and Algorithms: Strong understanding of arrays, lists, stacks, queues, trees, and graphs.</li>
-                        <li>Programming in C, Java: Developed several small-scale programs and problem-solving solutions.</li>
-                        <li>Introduction to Scripting Languages (Python): Basic introduction focusing on automation and simple problem-solving; fundamentals of supervised/unsupervised learning, linear regression, and classification algorithms.</li>
-                        <li>Artificial Intelligence and Data Science: Basics of AI techniques (search algorithms, decision making, game theory); introduction to data analysis, statistics, and data visualization with Python and Pandas.</li>
-                    </ul>
-                </article>
-                <article class="mb-10 p-8 bg-custom-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-2">TIMPANY SCHOOL (ISC - 12th Grade)</h3>
-                    <p class="text-md text-custom-dark-gray mb-1">Mar 2021 - Jan 2023 | Visakhapatnam, India</p>
-                    <p class="text-md text-custom-dark-gray">GPA: Mathematics: 98%, Science: 90.25%, Computer Applications: 94%</p>
-                </article>
-                <article class="p-8 bg-custom-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    <h3 class="text-2xl font-semibold text-mindaro mb-2">TIMPANY SCHOOL (ICSE - 10th Grade)</h3>
-                    <p class="text-md text-custom-dark-gray mb-1">Mar 2014 - 2020 | Visakhapatnam, India</p>
-                    <p class="text-md text-custom-dark-gray">GPA: Mathematics: 95%, Science: 95%, Computer Applications: 100%</p>
-                </article>
+        <section id="skills" class="card">
+            <h2><i class="fas fa-code"></i> Technical Skills</h2>
+            
+            <div class="skill-category">
+                <p class="skill-title">Programming Languages (Core):</p>
+                <p>C, C++, Java, Python, Embedded C, MATLAB, HTML, JavaScript, CSS</p>
+            </div>
+            
+            <div class="skill-category">
+                <p class="skill-title">Data Structures & Systems:</p>
+                <p>Data Structures & Algorithms (DSA), Java Standard Library, Data Mining, Statistics, Machine Learning, Deep Learning</p>
+            </div>
+            
+            <div class="skill-category">
+                <p class="skill-title">Tools & OS:</p>
+                <p>GitHub, Linux, VS Code, Colab, Jupyter, Kaggle</p>
+            </div>
+            
+            <div class="skill-category">
+                <p class="skill-title">Embedded & Hardware:</p>
+                <p>8051 Microcontroller Programming, FPGA Design and Implementation (VHDL), Nexys 4 DDR Board</p>
             </div>
         </section>
 
-        <section id="Achievements" class="bg-custom-white py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-8 text-center border-b-2 border-mindaro pb-2 inline-block mx-auto">Achievements</h2>
-                <ul class="list-disc list-inside text-lg text-custom-black space-y-3">
-    
-                    <li>AWS AI & ML Scholars 2025 Challenge Completion</li>
-                    <li><strong>Vepa Annapoorniah Prize:</strong> Best Pupil in Mathematics (12th Grade ISC, Grade: 98%)</li>
-                    <li><strong>JEE Mains:</strong> Achieved 95.5 percentile</li>
+        <section id="experience" class="card">
+            <h2><i class="fas fa-briefcase"></i> Experience</h2>
+            
+            <div class="item">
+                <p class="title">LeetCode</p>
+                <p class="subtitle">Problem solver and solution contributor | May 2023 – Present | Remote</p>
+                <ul>
+                    <li>Solved over 800+ problems and published 300+ solutions with more than 32.2K views.</li>
+                    <li>Achieved a Contest Rating of 1700+.</li>
+                    <li>Demonstrates expertise in Data Structures and Algorithms (DSA) and competitive programming, essential for building performant software.</li>
+                </ul>
+                <div class="stats-container">
+        
+                <div class="leetcode-stats">
+                    <img src="https://leetcard.jacoblin.cool/nidhibaratam2005?theme=light&font=baloo&ext=contest" alt="LeetCode Stats" />
+                    <br/>
+                    <img src="https://img.shields.io/badge/LeetCode-Python%20%7C%20Java%20%7C%20C-orange?style=for-the-badge&logo=leetcode&logoColor=white" alt="LeetCode Languages Badge" />
+                </div>
+                <hr>
+            </div>
+            </div>
+            
+            <div class="item">
+                <p class="title">GirlScript Summer of Code</p>
+                <p class="subtitle">Contributor | Jul 2025 – August 2025 | Remote, India</p>
+                <ul>
+                    <li>Selected as a contributor for GSSOC 2025.</li>
+                    <li>Contributing to TalkHeal, an AI mental health support assistant, built with Python Streamlit and powered by Google Gemini under mentorship.</li>
+                    <li>Enhancing skills in collaboration, Git, and large-scale project structures.</li>
                 </ul>
             </div>
         </section>
-
-        <section id="certifications" class="bg-mindaro-900 py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-8 text-center border-b-2 border-mindaro pb-2 inline-block mx-auto">Certifications</h2>
-                <ul class="list-disc list-inside text-lg text-custom-black space-y-3">
-                    <li><strong>Learn Java</strong> by CodeChef - <a href="https://www.codechef.com/certificates/public/9ad3f7f" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>Learn Advance Java</strong> by CodeChef - <a href="https://www.codechef.com/certificates/public/9f6c061" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>Java Problem Solving</strong> by CodeChef - <a href="https://www.codechef.com/certificates/public/51a3f53" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>Beginner DSA in Java</strong> by CodeChef - <a href="https://www.codechef.com/certificates/public/cbe6d88" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>MATLAB Onramp</strong> by MathWorks - <a href="https://matlabacademy.mathworks.com/progress/share/certificate.html?id=786f3dca-d53d-4609-b7d2-0e7cd1d42819&" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>Simulink Onramp</strong> by MathWorks - <a href="https://matlabacademy.mathworks.com/progress/share/certificate.html?id=3951ade8-a492-4a78-b9e4-320c6ec1ff8f&" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>Circuit simulation Onramp</strong> by MathWorks - <a href="https://matlabacademy.mathworks.com/progress/share/certificate.html?id=a4972d39-dd97-4343-9f78-e227e5f46c34&" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>Digital Signal Processing 1: Basic Concepts and Algorithms</strong> by EPFL via Coursera - <a href="https://www.coursera.org/account/accomplishments/verify/GLEPAN7VVYUH" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>Matrix Algebra for Engineers</strong> by HKUST via Coursera - <a href="https://www.coursera.org/account/accomplishments/verify/4FI7S3OIS20V" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>Tweet Emotion Recognition with TensorFlow</strong> Coursera Project network - <a href="https://www.coursera.org/account/accomplishments/verify/SNQJAONGQ6RM" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                    <li><strong>Oracle Java explorer</strong> by Oracle - <a href="https://drive.google.com/file/d/1Xomep9kQtAM0t-gfK7z3HeLB-64_vgt6/view" target="_blank" class="text-indigo-dye hover:text-mindaro transition-colors-transform underline flex items-center gap-2">Certificate</a></li>
-                </ul>
+        
+        <section id="projects" class="card">
+            <h2><i class="fas fa-folder-open"></i> Projects</h2>
+            
+            <div class="project-item item">
+                <p class="title">Airfare Predictor (ML/Data Project)</p>
+                <p>LSTM-based airfare predictor on Goibibo data.</p>
+                <p>Achieved MAE: 0.0513, Accuracy: 91%.</p>
+                <div class="project-links">
+                    <a href="https://github.com/nidhibaratam/Airfare-Predictor/tree/main" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://drive.google.com/file/d/14lEiWjOFOG0LrFlU0yhw-gKpMWEn42LP/view" target="_blank"><i class="fas fa-video"></i> Video</a>
+                    <a href="https://medium.com/@nidhibaratam2005/decoding-the-skies-my-journey-building-an-airfare-predictor-6a22e60273a" target="_blank"><i class="fas fa-file-alt"></i> Article</a>
+                </div>
             </div>
-        </section>
+            
+            <div class="project-item item">
+                <p class="title">Hexadecimal to Binary Converter on 8051 Microcontroller (Systems/Embedded)</p>
+                <p>Designed a system converting hexadecimal input via keypad to binary output on LCD using 8051 microcontroller and Embedded C.</p>
+                <p>Demonstrates microcontroller interfacing, number system conversions, and embedded system design.</p>
+                <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1BC1wSAC3uHvqVZpOaRsfCdXnD9MYl3c3/view" target="_blank"><i class="fas fa-link"></i> Link</a>
+                </div>
+            </div>
 
-        <section id="badges" class="bg-custom-white py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-8 text-center border-b-2 border-mindaro pb-2 inline-block mx-auto">Badges</h2>
-                <div class="badge-container">
-                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="073e23cd-c258-43e2-8cd1-190592c5f781" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="2588abc3-2904-409b-b88a-aada9f3cc038" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="11f840cc-8ec7-489a-9ba8-36a1d1140b8e" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="908a69b7-ddee-4864-be63-6130525291f2" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="13d966ad-e23c-4d3f-90ef-66084f1d2d9f" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="06d99e2b-836d-413d-9e36-f6e705131b1b" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
-                    <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="af570218-d699-4677-99eb-30b46d313691" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+            <div class="project-item item">
+                <p class="title">Four Bit Ring Counter FPGA Project (Hardware/Logic)</p>
+                <p>Implemented 4-bit ring counter using VHDL on Nexys 4 DDR FPGA board. Features clock-driven states displayed on 7-segment and LEDs.</p>
+                <div class="project-links">
+                    <a href="https://drive.google.com/file/d/1i15-qfD2MtWKnWEnVbfVcyzmlBfPjirT/view" target="_blank"><i class="fas fa-link"></i> Link</a>
+                </div>
+            </div>
+
+            <div class="project-item item">
+                <p class="title">Digit Recognition Neural Network</p>
+                <p>Built ANN model with 97.41% accuracy using MNIST.</p>
+                <div class="project-links">
+                    <a href="https://github.com/nidhibaratam/Handwritten-Digit-Recognition-with-Neural-Networks" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://medium.com/@nidhibaratam2005/from-pixels-to-predictions-our-first-dive-into-image-recognition-373cec7cbacc" target="_blank"><i class="fas fa-file-alt"></i> Article</a>
+                </div>
+            </div>
+
+            <div class="project-item item">
+                <p class="title">Iris Species Predictor</p>
+                <p>ANN classifier for the Iris dataset. Accuracy: 93%.</p>
+                <div class="project-links">
+                    <a href="https://github.com/nidhibaratam/Predicting-the-species-of-an-unknown-iris-type-flower" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://medium.com/@nidhibaratam2005/unlocking-natures-secrets-how-we-taught-ai-to-identify-iris-flowers-3818d1662bea" target="_blank"><i class="fas fa-file-alt"></i> Article</a>
+                </div>
+            </div>
+
+            <div class="project-item item">
+                <p class="title">Personal Portfolio Website</p>
+                <p>Developed portfolio using HTML, CSS, and JS.</p>
+                <div class="project-links">
+                    <a href="https://nidhibaratam.github.io/my_portfolio/" target="_blank"><i class="fas fa-globe"></i> Website</a>
+                    <a href="https://github.com/nidhibaratam/my_portfolio" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
         </section>
 
-        <section id="extracurricular" class="bg-mindaro-900 py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-8 text-center border-b-2 border-mindaro pb-2 inline-block mx-auto">Extracurricular Activities & Interests</h2>
-                <ul class="list-disc list-inside text-lg text-custom-black space-y-3">
-                    <li>Creative Arts: Enjoys painting and drawing, which enhances creativity and attention to detail.</li>
-                    <li>Sports & Games: Enthusiast in strategic thinking and problem-solving through chess, and developing teamwork and resilience through athletics.</li>
-                    <li>Machine Learning & AI: Exploring AI techniques and algorithms through beginner-level courses and hands-on projects.</li>
-                    <li>Competitive Programming: Religiously solving problems related to algorithms and data structures on LeetCode everyday.</li>
+        <section id="other" class="card section-two-col">
+            <div>
+                <h2><i class="fas fa-trophy"></i> Awards</h2>
+                <ul>
+                    <li>LeetCode Contest Rating: 1700+</li>
+                    <li>Vepa Annapoorniah Prize (Timapny School) - Best Pupil in Mathematics (12th ISC)</li>
+                    <li>JEE Mains 95.5 percentile</li>
+                    <li>Kaggle Active ML competition contributor</li>
                 </ul>
             </div>
-        </section>
-
-        <section id="languages" class="bg-custom-white py-16 md:py-20">
-            <div class="container mx-auto px-4 max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-indigo-dye mb-8 text-center border-b-2 border-mindaro pb-2 inline-block mx-auto">Languages</h2>
-                <ul class="list-disc list-inside text-lg text-custom-black space-y-3">
-                    <li>English (Intermediate)</li>
+            
+            <div>
+                <h2><i class="fas fa-running"></i> Activities & Languages</h2>
+                
+                <p class="skill-title">Extracurricular activities:</p>
+                <ul>
+                    <li>Painting</li>
+                    <li>Skating (state level medalist)</li>
+                    <li>Won medals in olympiads in school</li>
+                    <li>Part of the sports club in college</li>
+                </ul>
+                
+                <p class="skill-title">Languages:</p>
+                <ul>
+                    <li>English (Advanced)</li>
                     <li>Telugu (Native)</li>
                     <li>Hindi (Conversational)</li>
                 </ul>
             </div>
         </section>
+        
+        <section id="contact" class="card">
+            <h2><i class="fas fa-address-book"></i> Contact & Links</h2>
+            <div class="contact-grid">
+                <div><i class="fas fa-phone"></i> Phone: +91-8367047097</div>
+                <div><i class="fas fa-envelope"></i> Personal Email: <a href="mailto:nidhibaratam2005@gmail.com">nidhibaratam2005@gmail.com</a></div>
+                <div><i class="fas fa-envelope-square"></i> Academic Email: <a href="mailto:23uec527@lnmiit.ac.in">23uec527@lnmiit.ac.in</a></div>
+                <div><i class="fas fa-map-marker-alt"></i> Location: Visakhapatnam, Andhra Pradesh, 530017</div>
+                <div><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/baratamnidhishri/" target="_blank">baratamnidhishri</a></div>
+                <div><i class="fab fa-github"></i> GitHub: <a href="https://github.com/nidhibaratam" target="_blank">nidhibaratam</a></div>
+                <div><i class="fas fa-code"></i> LeetCode: <a href="https://leetcode.com/u/nidhibaratam2005/" target="_blank">nidhibaratam2005</a></div>
+            </div>
+        </section>
     </main>
 
-    <footer id="contact-footer" class="bg-custom-black text-custom-white py-10">
-        <div class="container mx-auto px-4 max-w-4xl text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-mindaro mb-6">Contact</h2>
-            <div class="text-lg space-y-3 mb-8">
-                <p class="flex items-center justify-center gap-2">
-                    <strong>Email:</strong> <a href="mailto:nidhibaratam2005@gmail.com" class="text-custom-white hover:text-mindaro transition-colors-transform underline">nidhibaratam2005@gmail.com</a>
-                </p>
-                <p class="flex items-center justify-center gap-2">
-                    <strong>Phone:</strong> +91-8367047097
-                </p>
-                <p class="flex items-center justify-center gap-2">
-                    <strong>Credly:</strong><a href="https://www.credly.com/users/nidhi-shri.7da3183d" target="_blank" class="text-custom-white hover:text-mindaro transition-colors-transform underline">https://www.credly.com/users/nidhi-shri.7da3183d</a>
-                </p>
-                <p class="flex items-center justify-center gap-2">
-                    <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/baratamnidhishri/" target="_blank" class="text-custom-white hover:text-mindaro transition-colors-transform underline">https://www.linkedin.com/in/baratamnidhishri/</a>
-                </p>
-                <p class="flex items-center justify-center gap-2">
-                    <strong>GitHub:</strong> <a href="https://www.github.com/nidhibaratam" target="_blank" class="text-custom-white hover:text-mindaro transition-colors-transform underline">github.com/nidhibaratam</a>
-                </p>
-                <p class="flex items-center justify-center gap-2">
-                    <strong>LeetCode:</strong> <a href="https://www.leetcode.com/u/nidhibaratam2005/" target="_blank" class="text-custom-white hover:text-mindaro transition-colors-transform underline">leetcode.com/u/nidhibaratam2005/</a>
-                </p>
-                <p class="flex items-center justify-center gap-2">
-                    <strong>Location:</strong> Visakhapatnam, Andhra Pradesh, India
-                </p>
-            </div>
-            <p class="text-sm mt-8">&copy; 2025 Baratam NidhiShri. All rights reserved.</p>
-        </div>
+    <footer>
+        <p>&copy; 2025 Baratam Nidhishri. Built with HTML, CSS, and JS.</p>
     </footer>
 
     <script src="script.js"></script>
