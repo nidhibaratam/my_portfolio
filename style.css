@@ -1,42 +1,394 @@
-/* Custom Tailwind CSS configuration for specific colors and font */
-/* @tailwind directives are necessary for Tailwind to process its utilities */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* General Resets and Base Styling */
+:root {
+    --primary-color: #0077b6; /* A deep blue for tech focus */
+    --secondary-color: #00b4d8;
+    --background-color: #f8f9fa; /* Light gray background */
+    --text-color: #333;
+    --card-background: #ffffff;
+    --font-family: 'Arial', sans-serif;
+}
 
-/* No :root variables or custom color utility classes needed here anymore.
-   Tailwind is configured in index.html to generate these automatically. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Apply Inter font family to the body using Tailwind's font-inter class,
-   which is defined in the tailwind.config. */
 body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
-/* Smooth transitions for interactive elements */
-.transition-colors-transform {
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Styling for Credly badges */
-.badge-container {
+/* Header and Navigation */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
     display: flex;
-    flex-wrap: wrap; /* Allow badges to wrap on smaller screens */
-    gap: 1rem; /* Space between badges */
-    justify-content: center; /* Center badges in the container */
-}
-.badge-container > div {
-    border-radius: 0.5rem; /* Rounded corners for badge containers */
-    overflow: hidden; /* Ensure content respects border-radius */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s ease; /* Lift effect on hover */
-}
-.badge-container > div:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Custom scroll-behavior for smooth scrolling to anchor links */
-html {
-    scroll-behavior: smooth;
+.header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    padding: 0.5rem 0;
+    transition: color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+.header nav a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px); /* Subtle lift on hover */
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Main Content Layout */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Card Styling for Sections */
+.card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 20px;
+    /* Softened shadow and added transition for motion */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift the whole card on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); /* Deeper shadow on hover */
+}
+
+.card h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+}
+
+/* Contact/Profile Header (About Section) */
+.profile-header {
+    text-align: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 5px solid var(--secondary-color);
+    transition: transform 0.5s ease;
+}
+
+.profile-img:hover {
+    transform: rotate(3deg) scale(1.05); /* Slight rotation and scale on hover */
+}
+
+.profile-header .tagline {
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: #444;
+}
+
+.profile-header .summary {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    font-size: 1.1rem;
+}
+
+/* Styling for the new stats container */
+.stats-container {
+    max-width: 900px;
+    margin: 2rem auto;
+    text-align: center; /* Center the images */
+}
+
+.github-stats img,
+.leetcode-stats img {
+    margin: 0.5rem 0.2rem;
+    max-width: 100%; /* Ensure responsiveness */
+    height: auto;
+}
+
+.leetcode-stats img:first-child {
+    max-width: 350px; /* Adjust size for the LeetCode card */
+}
+
+.stats-container hr {
+    margin-top: 1.5rem;
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    background-image: linear-gradient(to right, #f8f9fa, #ccc, #f8f9fa);
+}
+
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    text-align: left;
+    max-width: 900px;
+    margin: 1.5rem auto 0;
+}
+
+.contact-grid div {
+    font-size: 1.1rem;
+    /* Hover effect for contact links/divs */
+    transition: background-color 0.3s, transform 0.2s;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.contact-grid div:hover {
+    background-color: #e9f5ff; /* Light background change */
+    transform: translateX(5px); /* Slide to the right */
+}
+
+.contact-grid a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.contact-grid a:hover {
+    text-decoration: underline;
+}
+
+/* Button Styling for Quick Links */
+.quick-links {
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: scale(1.05); /* Pop out effect on hover */
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* General Item Styling (Education, Experience) */
+.item {
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    transition: border-left-color 0.3s;
+}
+
+.item:hover {
+    border-left-color: var(--primary-color); /* Color change on hover */
+}
+
+.item .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 0.25rem;
+}
+
+.item .subtitle {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.item .details {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 0.75rem;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+/* Skills Styling */
+.skill-category {
+    margin-bottom: 1rem;
+}
+
+.skill-title {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.scores-list {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    font-size: 0.95rem;
+}
+
+.scores-list li {
+    background-color: #f1f8ff;
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid var(--secondary-color);
+    transition: background-color 0.3s;
+}
+
+.scores-list li:hover {
+    background-color: #dbeaff; /* Darker background on hover */
+}
+
+/* Projects Styling */
+.project-item {
+    border-left: 4px solid var(--primary-color);
+    transition: border-left-color 0.3s;
+}
+
+.project-item:hover {
+    border-left-color: var(--secondary-color);
+}
+
+.project-links a {
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s; /* Added transform transition */
+}
+
+.project-links a:hover {
+    color: var(--secondary-color);
+    transform: translateY(-3px); /* Link bounce effect */
+}
+
+/* Two Column Section (Awards, Activities) */
+.section-two-col {
+    display: flex;
+    gap: 2rem;
+}
+
+.section-two-col > div {
+    flex: 1;
+}
+
+.section-two-col h2 {
+    font-size: 1.5rem; 
+    color: #2a6f95; /* Different shade for sub-headers */
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background-color: #e9ecef;
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin-top: 30px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header nav {
+        display: none; /* Hide navigation by default on mobile */
+        flex-direction: column;
+        width: 100%;
+        text-align: left;
+    }
+
+    .header nav.active {
+        display: flex; /* Show navigation when active class is added by JS */
+    }
+
+    .header nav a {
+        margin: 0.5rem 0;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .menu-toggle {
+        display: block; /* Show menu toggle button */
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+    
+    .section-two-col {
+        flex-direction: column;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+    
+    /* Responsive stats for mobile */
+    .github-stats,
+    .leetcode-stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .leetcode-stats img:first-child {
+        max-width: 90%; 
+    }
 }
