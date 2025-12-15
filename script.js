@@ -1,21 +1,30 @@
-// JavaScript for mobile menu toggle
-const mobileMenuButton = document.getElementById('mobile-menu-button');
-const mobileMenu = document.getElementById('mobile-menu');
+document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('.header nav');
 
-// Event listener to toggle the 'hidden' class on the mobile menu
-mobileMenuButton.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-});
+    menuToggle.addEventListener('click', () => {
+        // Toggles the 'active' class on the navigation menu
+        nav.classList.toggle('active');
+        
+        // Change the icon (bars to times/close)
+        const icon = menuToggle.querySelector('i');
+        if (nav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
 
-// Optional: Close mobile menu when a navigation link within it is clicked
-// This improves user experience by collapsing the menu after navigation
-const mobileMenuLinks = mobileMenu.querySelectorAll('#mobile-menu a'); // Select links specifically within the mobile menu
-mobileMenuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden'); // Add 'hidden' class to hide the menu
+    // Close the menu when a link is clicked (for better UX on mobile)
+    nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                nav.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+                menuToggle.querySelector('i').classList.add('fa-bars');
+            }
+        });
     });
 });
-
-// The Credly embed.js script is now loaded directly in index.html next to each badge div,
-// as per your original request to ensure visibility.
-// Therefore, the global loading logic for credlyScript is removed from here.
