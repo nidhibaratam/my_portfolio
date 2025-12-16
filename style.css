@@ -102,8 +102,8 @@ body {
 }
 
 .profile-img {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 1rem;
@@ -130,8 +130,8 @@ body {
 
 /* Styling for the new stats container */
 .stats-container {
-    max-width: 900px;
-    margin: 2rem auto;
+    max-width: 2000px;
+    margin: 6rem auto;
     text-align: center; /* Center the images */
 }
 
