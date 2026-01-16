@@ -288,6 +288,32 @@ ul {
     background-color: #dbeaff; /* Darker background on hover */
 }
 
+    /* SGPA and CGPA List Styling */
+    .SGPA-list,
+    .Current.CGPA-list {
+        list-style: none;
+        margin-left: 0;
+        padding-left: 0;
+        font-size: 0.95rem;
+    }
+
+    .SGPA-list li,
+    .Current.CGPA-list li {
+        background-color: #f1f8ff;
+        display: inline-block;
+        padding: 0.2rem 0.5rem;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+        border-radius: 4px;
+        border: 1px solid var(--secondary-color);
+        transition: background-color 0.3s;
+    }
+
+    .SGPA-list li:hover,
+    .Current.CGPA-list li:hover {
+        background-color: #dbeaff; /* Darker background on hover */
+    }
+
 /* Projects Styling */
 .project-item {
     border-left: 4px solid var(--primary-color);
