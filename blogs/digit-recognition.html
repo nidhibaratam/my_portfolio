@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Pixels to Predictions - Image Recognition</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .blog-content {
+            text-align: left;
+            line-height: 1.8;
+            color: #333;
+        }
+        .blog-content h3 {
+            margin-top: 2rem;
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .blog-content p {
+            margin-bottom: 1.2rem;
+        }
+        .blog-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .blog-image-container {
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        .blog-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <h1>BARATAM NIDHISHRI</h1>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<main class="container">
+    <article class="card">
+        <a href="../index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <header class="profile-header" style="padding-top: 0; text-align: left;">
+            <h2>From Pixels to Predictions: Our First Dive into Image Recognition</h2>
+            <p class="tagline" style="font-size: 1.05rem;">
+                By Bitan Das, Baratam Nidhishri, Bhavye Garg <br>
+                <span style="font-size: 0.95rem;">The LNM Institute of Information Technology</span>
+            </p>
+            <div class="quick-links" style="margin-top: 10px;">
+                <a href="https://github.com/nidhibaratam/Handwritten-Digit-Recognition-with-Neural-Networks"
+                   target="_blank" class="btn" style="padding: 0.5rem 1rem;">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </header>
+
+        <hr style="margin: 2rem 0; opacity: 0.2;">
+
+        <div class="blog-content">
+            <p>
+                Have you ever wondered how your phone recognizes faces or how computers distinguish between
+                different objects? It’s all thanks to the magic of <strong>image recognition</strong>!
+                As a team of college students eager to explore <strong>computer vision</strong>, we built
+                our very first model to identify handwritten digits — a classic challenge that taught us
+                the foundations of deep learning.
+            </p>
+
+            <p>
+                This project marked our first real step into teaching machines how to “see” and make
+                predictions from raw pixel data.
+            </p>
+
+            <div class="blog-image-container">
+                <img src="a2.png" alt="Handwritten Digit Recognition" class="blog-image">
+            </div>
+
+            <h3>The “Why”: Seeing Beyond the Pixels</h3>
+            <p>
+                Unlike humans, computers don’t see shapes — they see numbers. Each image is simply a grid
+                of pixel values. Teaching a machine to distinguish a handwritten ‘7’ from a ‘1’ is a
+                fascinating challenge and a perfect introduction to <strong>Artificial Neural Networks (ANNs)</strong>.
+                Our goal was to transform these numerical grids into meaningful predictions.
+            </p>
+
+            <h3>Data at Hand: The Famous MNIST Dataset</h3>
+            <p>
+                We used the iconic <strong>MNIST dataset</strong>, containing thousands of 28×28 grayscale
+                images of handwritten digits (0–9). Often called the “Hello World” of deep learning,
+                MNIST is ideal for beginners to understand image classification without unnecessary complexity.
+            </p>
+
+            <h3>Preparing Our “Eyes”: Data Preprocessing</h3>
+            <p>
+                Before training, the raw image data required careful preprocessing:
+            </p>
+            <ul>
+                <li>
+                    <strong>Normalization:</strong> Pixel values were scaled from 0–255 down to 0–1,
+                    making learning more stable and efficient.
+                </li>
+                <li>
+                    <strong>Flattening:</strong> Each 28×28 image was converted into a 1D vector of
+                    784 values so it could be fed into our neural network.
+                </li>
+            </ul>
+
+            <h3>Building Our Brain: The Keras Model Architecture</h3>
+            <p>
+                We chose <strong>TensorFlow’s Keras API</strong> for its simplicity and flexibility.
+                Our ANN architecture included:
+            </p>
+            <ul>
+                <li><strong>Input Layer:</strong> Accepting 784 pixel values per image.</li>
+                <li>
+                    <strong>Hidden Layers:</strong> Two dense layers with 128 and 32 neurons,
+                    using <strong>ReLU activation</strong> to learn complex digit features.
+                </li>
+                <li>
+                    <strong>Output Layer:</strong> 10 neurons (digits 0–9) with
+                    <strong>Softmax activation</strong> to produce probability scores.
+                </li>
+            </ul>
+
+            <h3>The Learning Process: Training &amp; Evaluation</h3>
+            <p>
+                The model was compiled using the <strong>Adam optimizer</strong> and
+                <strong>sparse categorical crossentropy</strong> loss function.
+                We trained it for <strong>20 epochs</strong>, during which it rapidly improved its accuracy.
+            </p>
+
+            <ul>
+                <li>
+                    <strong>Accuracy &amp; Loss Graphs:</strong> Helped us track learning progress
+                    and detect overfitting.
+                </li>
+                <li>
+                    <strong>Confusion Matrix:</strong> Visualized correct predictions and common
+                    misclassifications between similar-looking digits.
+                </li>
+            </ul>
+
+            <p>
+                The final model achieved an impressive <strong>~97.4% accuracy</strong> on unseen test data.
+            </p>
+
+            <h3>Putting It to the Test: Real-World Predictions</h3>
+            <p>
+                The most exciting moment was watching the model predict digits it had never seen before.
+                Seeing correct predictions in real time truly brought the power of neural networks to life.
+            </p>
+
+            <h3>Our Deep Learning Debut: What We Learned</h3>
+            <ul>
+                <li>Core concepts behind Artificial Neural Networks</li>
+                <li>The importance of data preprocessing</li>
+                <li>How to train, validate, and evaluate deep learning models</li>
+                <li>The value of tools like Google Colab for collaboration</li>
+            </ul>
+
+            <p>
+                This project was more than recognizing numbers — it was about demystifying computer vision
+                and discovering the potential of deep learning. As students, this experience laid a strong
+                foundation for future exploration in AI.
+            </p>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 1.5rem; background: #f1f8ff; border-radius: 8px;">
+            <p>
+                <strong>Explore the code:</strong>
+                <a href="https://github.com/nidhibaratam/Handwritten-Digit-Recognition-with-Neural-Networks"
+                   target="_blank">
+                    Handwritten Digit Recognition on GitHub
+                </a>.
+                We welcome your feedback and ideas!
+            </p>
+        </div>
+    </article>
+</main>
+
+<footer>
+    <p>&copy; 2026 Baratam Nidhishri. Built with HTML, CSS, and JS.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

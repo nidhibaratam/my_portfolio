@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlocking Nature’s Secrets - Baratam Nidhishri</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .blog-content {
+            text-align: left;
+            line-height: 1.8;
+            color: #333;
+        }
+        .blog-content h3 {
+            margin-top: 2rem;
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .blog-content p {
+            margin-bottom: 1.2rem;
+        }
+        .blog-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        .blog-image-container {
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        .blog-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <h1>BARATAM NIDHISHRI</h1>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#contact">Contact</a>
+    </nav>
+</header>
+
+<main class="container">
+    <article class="card">
+        <a href="../index.html#projects" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Portfolio
+        </a>
+
+        <header class="profile-header" style="padding-top: 0; text-align: left;">
+            <h2>Unlocking Nature’s Secrets: How We Taught AI to Identify Iris Flowers!</h2>
+            <p class="tagline" style="font-size: 1.1rem;">By Baratam Nidhishri</p>
+            <div class="quick-links" style="margin-top: 10px;">
+                <a href="https://colab.research.google.com/gist/nidhibaratam/790f82f4434a3027a0e4403762e437c9/predicting-the-species-of-an-unknown-iris-type-flower.ipynb"
+                   target="_blank" class="btn" style="padding: 0.5rem 1rem;">
+                    <i class="fas fa-code"></i> Colab
+                </a>
+                <a href="https://github.com/nidhibaratam/Predicting-the-species-of-an-unknown-iris-type-flower"
+                   target="_blank" class="btn" style="padding: 0.5rem 1rem;">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </header>
+
+        <hr style="margin: 2rem 0; opacity: 0.2;">
+
+        <div class="blog-content">
+            <p>
+                Imagine a world where <strong>Artificial Intelligence</strong> helps us solve everyday puzzles,
+                even in nature! Have you ever looked at a beautiful flower and wished you could instantly know
+                its exact species? That’s exactly what I set out to do with this project: build an
+                <strong>Artificial Neural Network (ANN)</strong> to precisely classify unknown Iris flower types!
+            </p>
+
+            <p>
+                This wasn’t just a coding exercise; it was a captivating journey into the heart of
+                <strong>classification problems</strong> and the incredible power of deep learning.
+            </p>
+
+            <div class="blog-image-container">
+                <img src="a3.png" alt="Iris Flower Classification using ANN" class="blog-image">
+            </div>
+
+            <h3>The “Why”: Becoming Digital Botanists</h3>
+            <p>
+                Why tackle Iris flowers? Because beneath their delicate petals lies a fascinating challenge for AI!
+                The three Iris species — Setosa, Versicolor, and Virginica — share similarities, yet each has unique traits.
+                My mission was to train a model to spot those subtle differences, turning raw data into a brilliant
+                botanical detective. It’s about empowering computers to “see” and categorize the world around us,
+                one flower at a time!
+            </p>
+
+            <h3>Our Dataset: The Blossoming Basics</h3>
+            <p>
+                For this floral adventure, I utilized the legendary <strong>Iris dataset</strong>.
+                It’s a perfect starter kit for anyone diving into classification. This dataset contains
+                150 samples, covering all three Iris species, each described by four vital measurements:
+            </p>
+            <ul>
+                <li>Sepal Length (cm)</li>
+                <li>Sepal Width (cm)</li>
+                <li>Petal Length (cm)</li>
+                <li>Petal Width (cm)</li>
+            </ul>
+
+            <h3>Preparing Our Garden: Data Transformation &amp; Visualization</h3>
+            <p>
+                Before our ANN could learn, the data needed a little tender loving care.
+            </p>
+            <ul>
+                <li>
+                    <strong>One-Hot Encoding:</strong> Species labels were transformed into numerical vectors
+                    (e.g., Setosa → [1, 0, 0]) so the neural network could interpret categorical data.
+                </li>
+                <li>
+                    <strong>Train-Test Split:</strong> The dataset was divided into 80% training data and
+                    20% testing data to ensure proper generalization.
+                </li>
+                <li>
+                    <strong>Feature Scaling:</strong> Using <strong>StandardScaler</strong>, all features were normalized
+                    so that no measurement dominated the learning process.
+                </li>
+            </ul>
+
+            <h3>Building Our Botanical Brain: The Keras Blueprint</h3>
+            <p>
+                I used <strong>TensorFlow’s Keras API</strong> to design the neural network, making development
+                both intuitive and efficient.
+            </p>
+            <ul>
+                <li><strong>Input Layer:</strong> Accepts four numerical flower measurements.</li>
+                <li><strong>Hidden Layers:</strong> Two layers with 8 and 10 neurons using ReLU activation.</li>
+                <li><strong>Output Layer:</strong> Three neurons with Softmax activation representing each Iris species.</li>
+            </ul>
+            <p>
+                The model was compiled using the <strong>Adam optimizer</strong> and
+                <strong>categorical crossentropy</strong> loss function.
+            </p>
+
+            <h3>The Learning Curve: Training &amp; Validation</h3>
+            <p>
+                The network was trained for <strong>75 epochs</strong>. With each iteration, accuracy increased
+                while loss decreased for both training and validation sets, indicating effective learning
+                without overfitting.
+            </p>
+            <p>
+                The final model achieved an impressive <strong>~93% accuracy</strong> on unseen test data.
+            </p>
+
+            <h3>The Reveal: Predicting the Next Bloom!</h3>
+            <p>
+                When presented with a completely unknown flower:
+            </p>
+            <ul>
+                <li>Sepal Length: 5.0 cm</li>
+                <li>Sepal Width: 2.0 cm</li>
+                <li>Petal Length: 1.3 cm</li>
+                <li>Petal Width: 0.5 cm</li>
+            </ul>
+            <p>
+                The model confidently predicted the species as <strong>Versicolor</strong>.
+            </p>
+
+            <h3>Our Blooming Insights: What We Mastered</h3>
+            <ul>
+                <li>Understanding the power of ANNs in classification tasks</li>
+                <li>The critical role of data preprocessing and scaling</li>
+                <li>Designing, training, and evaluating neural networks effectively</li>
+            </ul>
+
+            <p>
+                This project beautifully blended nature and technology, highlighting how machine learning
+                can uncover meaningful patterns hidden within data. I hope it inspires you to explore
+                the fascinating world of AI!
+            </p>
+        </div>
+
+        <div style="margin-top: 3rem; padding: 1.5rem; background: #f1f8ff; border-radius: 8px;">
+            <p>
+                <strong>Want to explore the code?</strong>
+                View the complete implementation on
+                <a href="https://colab.research.google.com/gist/nidhibaratam/790f82f4434a3027a0e4403762e437c9/predicting-the-species-of-an-unknown-iris-type-flower.ipynb" target="_blank">
+                    Google Colab
+                </a>
+                and
+                <a href="https://github.com/nidhibaratam/Predicting-the-species-of-an-unknown-iris-type-flower" target="_blank">
+                    GitHub
+                </a>.
+            </p>
+        </div>
+    </article>
+</main>
+
+<footer>
+    <p>&copy; 2026 Baratam Nidhishri. Built with HTML, CSS, and JS.</p>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>

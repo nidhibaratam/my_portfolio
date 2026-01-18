@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoding the Skies - Baratam Nidhishri</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .blog-content {
+            text-align: left;
+            line-height: 1.8;
+            color: #333;
+        }
+        .blog-content h3 {
+            margin-top: 2rem;
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .blog-content p {
+            margin-bottom: 1.2rem;
+        }
+        .blog-content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 20px;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Image Styling */
+        .blog-image-container {
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+        .blog-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+        .img-caption {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>BARATAM NIDHISHRI</h1>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../index.html#projects">Projects</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <article class="card">
+            <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            
+            <header class="profile-header" style="padding-top: 0; text-align: left;">
+                <h2>Decoding the Skies: An Airfare Predictor</h2>
+                <p class="tagline" style="font-size: 1.1rem;">By Baratam Nidhishri</p>
+                <div class="quick-links" style="margin-top: 10px;">
+                    <a href="https://colab.research.google.com/gist/nidhibaratam/9264b2d7cd515eb8067273fce0bd4364/airfare-predictor-final-version.ipynb" target="_blank" class="btn" style="padding: 0.5rem 1rem;"><i class="fas fa-code"></i> Colab</a>
+                    <a href="https://github.com/nidhibaratam/DATA-SCIENCE-PROJECT/blob/main/airfare_predictor_final_version.ipynb" target="_blank" class="btn" style="padding: 0.5rem 1rem;"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </header>
+
+            <hr style="margin: 2rem 0; opacity: 0.2;">
+
+            <div class="blog-content">
+                <p>Traveling between cities in India can often feel like a game of chance when it comes to flight prices. As someone who frequently travels between my hometown and Jaipur for college, I’ve experienced this firsthand. This inspired me to leverage my data skills to build a tool that could predict airfares for various routes across India.</p>
+
+                <div class="blog-image-container">
+                    <img src="a1.png" alt="Airfare Predictor Visualization" class="blog-image">
+                    <!-- <span class="img-caption">Data Visualization of Indian Flight Price Trends</span> -->
+                </div>
+
+                <h3>The “Why”: Seeking Clarity in India’s Flight Pricing</h3>
+                <ul>
+                    <li>The often unpredictable nature of flight prices across various routes in India sparked this project.</li>
+                    <li>My own experiences booking flights highlighted the need for a predictive tool.</li>
+                    <li>The goal is to empower travelers with insights into potential costs.</li>
+                </ul>
+
+                <h3>Data Insights from Goibibo for Multiple Routes</h3>
+                <p>I utilized historical flight data from Goibibo, covering numerous routes connecting major Indian cities. Key data points analyzed include: airline, origin/destination cities, departure/arrival times, flight duration, number of stops, and date of travel.</p>
+
+                <h3>Feature Engineering: Preparing Data for Prediction</h3>
+                <p>Raw flight data was transformed into a format suitable for machine learning. Categorical features (airlines, cities) were handled using techniques like one-hot encoding. Temporal features were extracted to capture seasonal price trends.</p>
+
+                <h3>Predicting Airfares: The Machine Learning Model</h3>
+                <p>A robust machine learning regression model was chosen for its ability to learn complex patterns in the data. This model was trained on the Goibibo dataset to predict airfares for various city pairs in India.</p>
+
+                <h3>Evaluating Performance: Gauging Prediction Accuracy</h3>
+                <p>The model’s accuracy was assessed using relevant evaluation metrics. The results suggest the model can learn meaningful price patterns applicable to a range of Indian flight routes.</p>
+
+                <h3>Empowering Travelers Across India</h3>
+                <p>This tool can potentially provide estimated flight prices for numerous routes within India, helping travelers identify cheaper times to fly.</p>
+            </div>
+            
+            <div style="margin-top: 3rem; padding: 1.5rem; background: #f1f8ff; border-radius: 8px;">
+                <p><strong>Want to see the logic?</strong> Explore the code on <a href="https://colab.research.google.com/gist/nidhibaratam/9264b2d7cd515eb8067273fce0bd4364/airfare-predictor-final-version.ipynb" target="_blank">Colab</a> and <a href="https://github.com/nidhibaratam/DATA-SCIENCE-PROJECT/blob/main/airfare_predictor_final_version.ipynb" target="_blank">GitHub</a>.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Baratam Nidhishri. Built with HTML, CSS, and JS.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
