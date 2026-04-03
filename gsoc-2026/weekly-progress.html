@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Progress - GSoC 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="gsoc.css">
+</head>
+<body>
+    <header class="gsoc-nav-header">
+        <div class="nav-container">
+            <div class="nav-logo">BARATAM NIDHISHRI</div>
+            <nav><a href="index.html">GSoC Home</a></nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <header class="gsoc-hero">
+            <h2>Week by Week Progress</h2>
+            <p>Tracking development throughout GSoC 2026</p>
+        </header>
+
+        <a href="index.html" class="btn gsoc-btn-back">← Back to Overview</a>
+
+        <div class="accordion-item card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>Week 1: Setup & Understanding</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <p><strong>Focus:</strong> Environment configuration.</p>
+                <ul class="task-list">
+                    <li>Installed Verilator dependencies</li>
+                    <li>Explored BlackParrot structure</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="accordion-item card">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span> Week 2: Architecture Study</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <p><strong>Focus:</strong> Deep dive into the pipeline.</p>
+                <ul class="task-list">
+                    <li>Analyzed BP-Stream and ALU</li>
+                    <li>Identified verification targets</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <script src="accordian.js"></script>
+</body>
+</html>

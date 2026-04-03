@@ -1,0 +1,167 @@
+/* ===== GSoC 2026 UNIFIED THEME ===== */
+:root {
+    --gsoc-gradient: linear-gradient(135deg, #6a11cb, #ff2d95);
+    --gsoc-purple: #6a11cb;
+    --gsoc-pink: #ff2d95;
+    --white: #ffffff;
+    --bg-light: #f4f7f6;
+    --text-dark: #2d3436;
+    --nav-bg: #1a1a2e; /* Unified Dark Navy Navigation */
+}
+
+body {
+    background-color: var(--bg-light);
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* NAVIGATION */
+.gsoc-nav-header {
+    background-color: var(--nav-bg);
+    color: white;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    background: var(--gsoc-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gsoc-nav-header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.gsoc-nav-header nav a:hover, .gsoc-nav-header nav a.active {
+    color: var(--gsoc-pink);
+    border-bottom: 2px solid var(--gsoc-pink);
+    padding-bottom: 5px;
+}
+
+/* HERO SECTION */
+.gsoc-hero {
+    background: var(--gsoc-gradient);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(106, 17, 203, 0.2);
+}
+
+/* LAYOUT & CARDS */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--gsoc-purple);
+}
+
+.section-title {
+    color: var(--gsoc-purple);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* LISTS & BUTTONS */
+.task-list, .project-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.task-list li, .project-info-list li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.task-list li:last-child { border-bottom: none; }
+
+.task-list li i, .project-info-list li i {
+    color: var(--gsoc-pink);
+    width: 20px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gsoc-btn {
+    background: var(--gsoc-gradient);
+    color: white !important;
+    border: none;
+}
+
+.gsoc-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(255, 45, 149, 0.3); }
+
+.gsoc-btn-back {
+    border: 2px solid var(--gsoc-purple);
+    color: var(--gsoc-purple) !important;
+    margin-bottom: 20px;
+}
+
+/* ACCORDION (Weekly Progress) */
+.accordion-header {
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    display: none;
+    padding-top: 20px;
+    margin-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+.active .accordion-content { display: block; }
