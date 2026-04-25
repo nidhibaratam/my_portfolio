@@ -15,6 +15,17 @@
         .log-title { color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; font-weight: bold; }
         .log-snippet { color: #00ff00; font-family: 'Courier New', monospace; font-size: 0.85rem; margin: 0; }
         .methodology-list { margin-top: 10px; padding-left: 20px; color: #555; font-size: 0.95rem; }
+
+        /* Professional styling for live links */
+        .task-link {
+            color: var(--gsoc-purple);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: 0.2s;
+        }
+        .task-link:hover {
+            border-bottom: 1px solid var(--gsoc-purple);
+        }
     </style>
 </head>
 <body>
@@ -35,10 +46,12 @@
                 <!-- BaseJump STL PR -->
                 <li>
                     <div class="task-header">
-                        <span class="task-label">BaseJump STL Verification (PR #743)</span>
+                        <span class="task-label">
+                            <a href="https://github.com/bespoke-silicon-group/basejump_stl/pull/743" target="_blank" class="task-link">BaseJump STL Verification (PR #743)</a>
+                        </span>
                         <span class="status-tag">ACTIVE REVIEW</span>
                     </div>
-                    <p class="task-desc">Developed a high-fidelity "UVM-lite" verification suite for <code>bsg_fifo_1r1w_small</code>. This work serves as the primary reference for modular verification in the **bespoke-silicon-group** ecosystem, utilizing SystemVerilog classes for Driver, Monitor, and Scoreboard logic without the overhead of the full UVM library, ensuring total compatibility with Verilator.</p>
+                    <p class="task-desc">Developed a high-fidelity "UVM-lite" verification suite for <code>bsg_fifo_1r1w_small</code>. This work serves as the primary reference for modular verification in the bespoke-silicon-group ecosystem, utilizing SystemVerilog classes for Driver, Monitor, and Scoreboard logic without the overhead of the full UVM library, ensuring total compatibility with Verilator.</p>
                 </li>
 
                 <!-- Protocol Compliance -->
@@ -79,7 +92,9 @@ Final Result: PASS=66 FAIL=0 | SUCCESS
                         <span class="task-label">Multi-Repository Coordination</span>
                         <span class="status-tag">COMPLETED</span>
                     </div>
-                    <p class="task-desc">Managed the strategic migration of verification tools from <code>black-parrot</code> to <code>basejump_stl/testing/experimental</code>. This coordination involved refactoring include paths, adjusting naming conventions to <code>bsg_</code> standards, and aligning with the maintainer's library-source philosophy.</p>
+                    <p class="task-desc">Managed the strategic migration of verification tools from 
+                        <a href="https://github.com/black-parrot/black-parrot/issues/1302" target="_blank" class="task-link">BlackParrot #1302</a> 
+                        to <code>basejump_stl/testing/experimental</code>. This coordination involved refactoring include paths, adjusting naming conventions to <code>bsg_</code> standards, and aligning with the maintainer's library-source philosophy.</p>
                 </li>
             </ul>
         </section>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pre-Proposal - GSoC 2026</title>
-    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="gsoc.css">
     <style>
         .task-list li { align-items: flex-start; padding: 22px 0; border-bottom: 1px solid #eee; }
@@ -13,6 +12,16 @@
         .task-desc { margin: 0; color: var(--text-dark); font-size: 1rem; line-height: 1.6; }
         .merged-badge { background: #e6fffa; color: #2c7a7b; padding: 2px 12px; border-radius: 50px; font-size: 0.75rem; border: 1px solid #b2f5ea; font-weight: bold; }
         .tech-pill { display: inline-block; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-top: 8px; font-family: monospace; }
+        
+        .task-link {
+            color: var(--gsoc-purple);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: 0.2s;
+        }
+        .task-link:hover {
+            border-bottom: 1px solid var(--gsoc-purple);
+        }
     </style>
 </head>
 <body>
@@ -34,8 +43,11 @@
                 <!-- Achievement 1 -->
                 <li>
                     <div class="task-content">
-                        <span class="task-label">Merged PR #1278: Architectural Visualization <span class="merged-badge">SUCCESS</span></span>
-                        <p class="task-desc">Resolved legacy Issue #790 (open since 2021) by implementing automated Mermaid.js diagrams and high-level summary tables. This contribution clarified the Address Router's handling of tile-sharded local space versus global I/O and DRAM regions, significantly reducing the onboarding curve for new SoC integrators.</p>
+                        <span class="task-label">
+                            <a href="https://github.com/black-parrot/black-parrot/pull/1278" target="_blank" class="task-link">Merged PR #1278</a>: Architectural Visualization 
+                            <span class="merged-badge">SUCCESS</span>
+                        </span>
+                        <p class="task-desc">Resolved legacy <a href="https://github.com/black-parrot/black-parrot/issues/790" target="_blank" class="task-link">Issue #790</a> (open since 2021) by implementing automated Mermaid.js diagrams and high-level summary tables. This contribution clarified the Address Router's handling of tile-sharded local space versus global I/O and DRAM regions, significantly reducing the onboarding curve for new SoC integrators.</p>
                         <div><span class="tech-pill">Mermaid.js</span> <span class="tech-pill">Documentation</span> <span class="tech-pill">SoC Architecture</span></div>
                     </div>
                 </li>
@@ -43,7 +55,10 @@
                 <!-- Achievement 2 -->
                 <li>
                     <div class="task-content">
-                        <span class="task-label">Merged PR #1252: Simulation Infrastructure <span class="merged-badge">SUCCESS</span></span>
+                        <span class="task-label">
+                            <a href="https://github.com/black-parrot/black-parrot/pull/1252" target="_blank" class="task-link">Merged PR #1252</a>: Simulation Infrastructure 
+                            <span class="merged-badge">SUCCESS</span>
+                        </span>
                         <p class="task-desc">Expanded the <code>eval_guide.md</code> with comprehensive, step-by-step simulation workflows for <code>bp_top</code> and <code>bp_me</code>. This ensured that first-time contributors could verify core-to-memory endpoint communication without navigating undocumented Makefile dependencies.</p>
                         <div><span class="tech-pill">Markdown</span> <span class="tech-pill">RTL Simulation</span> <span class="tech-pill">Onboarding</span></div>
                     </div>
@@ -61,7 +76,9 @@
                 <!-- Achievement 4 -->
                 <li>
                     <div class="task-content">
-                        <span class="task-label">Infrastructure Fix: PR #1243</span>
+                        <span class="task-label">
+                            <a href="https://github.com/black-parrot/black-parrot/pull/1243" target="_blank" class="task-link">Infrastructure Fix: PR #1243</a>
+                        </span>
                         <p class="task-desc">Identified a critical build-blocker in <code>Dockerfile.ubuntu24.04</code> related to Python virtual environment permission propagation. Proposed and implemented a structural reordering of build stages to ensure secure ownership transfer (<code>chown</code>) while maintaining non-root container runtime security standards.</p>
                         <div><span class="tech-pill">DevOps</span> <span class="tech-pill">Linux Permissions</span> <span class="tech-pill">Docker</span></div>
                     </div>
