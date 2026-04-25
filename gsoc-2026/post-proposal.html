@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post-Proposal - GSoC 2026</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="gsoc.css">
+    <style>
+        .task-list li { display: block; padding: 25px 0; border-bottom: 1px solid #eee; }
+        .task-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .task-label { font-weight: 800; color: var(--gsoc-purple); font-size: 1.1rem; letter-spacing: 0.5px; }
+        .task-desc { margin-bottom: 15px; color: var(--text-dark); font-size: 1rem; line-height: 1.6; }
+        .status-tag { font-family: monospace; font-size: 0.8rem; padding: 4px 10px; background: #f8fafc; color: #64748b; border-radius: 6px; border: 1px solid #e2e8f0; font-weight: bold; }
+        .log-container { background: #1a1a2e; padding: 15px; border-radius: 8px; border-left: 4px solid var(--gsoc-pink); margin-top: 15px; }
+        .log-title { color: #94a3b8; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 8px; font-weight: bold; }
+        .log-snippet { color: #00ff00; font-family: 'Courier New', monospace; font-size: 0.85rem; margin: 0; }
+        .methodology-list { margin-top: 10px; padding-left: 20px; color: #555; font-size: 0.95rem; }
+    </style>
 </head>
 <body>
     <header class="gsoc-nav-header">
@@ -17,13 +27,60 @@
 
     <main class="container">
         <a href="index.html" class="btn gsoc-btn-back">← Back to Overview</a>
+        
         <section class="card">
-            <h2 class="section-title">Post-Proposal Work</h2>
+            <h2 class="section-title">Post-Proposal Development & Verification</h2>
+            
             <ul class="task-list">
-                <li>Developed BP-Stream UVM Testbench</li>
-                <li>Designed ALU Verification Environment</li>
-                <li>Implemented Register File Testing</li>
-                <li>Integrated Constrained Random Testing</li>
+                <!-- BaseJump STL PR -->
+                <li>
+                    <div class="task-header">
+                        <span class="task-label">BaseJump STL Verification (PR #743)</span>
+                        <span class="status-tag">ACTIVE REVIEW</span>
+                    </div>
+                    <p class="task-desc">Developed a high-fidelity "UVM-lite" verification suite for <code>bsg_fifo_1r1w_small</code>. This work serves as the primary reference for modular verification in the **bespoke-silicon-group** ecosystem, utilizing SystemVerilog classes for Driver, Monitor, and Scoreboard logic without the overhead of the full UVM library, ensuring total compatibility with Verilator.</p>
+                </li>
+
+                <!-- Protocol Compliance -->
+                <li>
+                    <div class="task-header">
+                        <span class="task-label">Ready-Valid-Yumi Protocol Mastery</span>
+                        <span class="status-tag">COMPLIANT</span>
+                    </div>
+                    <p class="task-desc">Engineered the testbench to strictly adhere to the <strong>BSG Standard Timing</strong> specifications. This involved:</p>
+                    <ul class="methodology-list">
+                        <li>Implementing the <strong>v -> r (valid-yumi)</strong> consumer handshake and <strong>r -> v</strong> producer handshake.</li>
+                        <li>Utilizing <strong>SystemVerilog Clocking Blocks</strong> to eliminate simulation race conditions during signal sampling.</li>
+                        <li>Validating the 1-cycle "show-ahead" latency logic required for data-path performance.</li>
+                    </ul>
+                </li>
+
+                <!-- Toolchain & Automation -->
+                <li>
+                    <div class="task-header">
+                        <span class="task-label">Verification Automation & Diagnostics</span>
+                        <span class="status-tag">VERILATOR 5.030</span>
+                    </div>
+                    <p class="task-desc">Developed an automated C++ test harness that executes high-volume randomized transaction sets. Integrated a queue-based <code>model_q</code> scoreboard to perform real-time data integrity checks against the RTL DUT.</p>
+                    <div class="log-container">
+                        <div class="log-title">Simulation Output Log</div>
+                        <pre class="log-snippet">
+[1945] PASS: f1 | [1985] WRITE: c0
+[2005] WRITE: 1f | [2005] PASS: 91
+-----------------------------------------
+Final Result: PASS=66 FAIL=0 | SUCCESS
+-----------------------------------------</pre>
+                    </div>
+                </li>
+
+                <!-- Coordination -->
+                <li>
+                    <div class="task-header">
+                        <span class="task-label">Multi-Repository Coordination</span>
+                        <span class="status-tag">COMPLETED</span>
+                    </div>
+                    <p class="task-desc">Managed the strategic migration of verification tools from <code>black-parrot</code> to <code>basejump_stl/testing/experimental</code>. This coordination involved refactoring include paths, adjusting naming conventions to <code>bsg_</code> standards, and aligning with the maintainer's library-source philosophy.</p>
+                </li>
             </ul>
         </section>
     </main>

@@ -4,8 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pre-Proposal - GSoC 2026</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cloudflare.com">
     <link rel="stylesheet" href="gsoc.css">
+    <style>
+        .task-list li { align-items: flex-start; padding: 22px 0; border-bottom: 1px solid #eee; }
+        .task-content { display: flex; flex-direction: column; gap: 8px; }
+        .task-label { font-weight: 800; color: var(--gsoc-purple); font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .task-desc { margin: 0; color: var(--text-dark); font-size: 1rem; line-height: 1.6; }
+        .merged-badge { background: #e6fffa; color: #2c7a7b; padding: 2px 12px; border-radius: 50px; font-size: 0.75rem; border: 1px solid #b2f5ea; font-weight: bold; }
+        .tech-pill { display: inline-block; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-top: 8px; font-family: monospace; }
+    </style>
 </head>
 <body>
     <header class="gsoc-nav-header">
@@ -17,13 +25,47 @@
 
     <main class="container">
         <a href="index.html" class="btn gsoc-btn-back">← Back to Overview</a>
+        
         <section class="card">
-            <h2 class="section-title">Pre-Proposal Work</h2>
+            <h2 class="section-title">Pre-Proposal Contributions & Foundations</h2>
+            <p style="margin-bottom: 20px; color: #666;">Documenting the initial exploration phase, environment stabilization, and documentation improvements within the BlackParrot ecosystem.</p>
+            
             <ul class="task-list">
-                <li>Setup BlackParrot environment via Verilator</li>
-                <li>Explored bp_top and bp_me workflows</li>
-                <li>Contributed initial PRs to the main repo</li>
-                <li>Verified UVM FIFO sample module</li>
+                <!-- Achievement 1 -->
+                <li>
+                    <div class="task-content">
+                        <span class="task-label">Merged PR #1278: Architectural Visualization <span class="merged-badge">SUCCESS</span></span>
+                        <p class="task-desc">Resolved legacy Issue #790 (open since 2021) by implementing automated Mermaid.js diagrams and high-level summary tables. This contribution clarified the Address Router's handling of tile-sharded local space versus global I/O and DRAM regions, significantly reducing the onboarding curve for new SoC integrators.</p>
+                        <div><span class="tech-pill">Mermaid.js</span> <span class="tech-pill">Documentation</span> <span class="tech-pill">SoC Architecture</span></div>
+                    </div>
+                </li>
+
+                <!-- Achievement 2 -->
+                <li>
+                    <div class="task-content">
+                        <span class="task-label">Merged PR #1252: Simulation Infrastructure <span class="merged-badge">SUCCESS</span></span>
+                        <p class="task-desc">Expanded the <code>eval_guide.md</code> with comprehensive, step-by-step simulation workflows for <code>bp_top</code> and <code>bp_me</code>. This ensured that first-time contributors could verify core-to-memory endpoint communication without navigating undocumented Makefile dependencies.</p>
+                        <div><span class="tech-pill">Markdown</span> <span class="tech-pill">RTL Simulation</span> <span class="tech-pill">Onboarding</span></div>
+                    </div>
+                </li>
+
+                <!-- Achievement 3 -->
+                <li>
+                    <div class="task-content">
+                        <span class="task-label">Environment & Workflow Optimization</span>
+                        <p class="task-desc">Engineered a robust, reproducible development environment. Successfully migrated from a resource-constrained Ubuntu Virtual Machine utilizing <code>prep-lite</code> to a high-performance Docker-based workflow on Apple Silicon (macOS ARM64). Validated toolchain stability using Verilator v5.030 to ensure simulation flag compatibility across different host OS architectures.</p>
+                        <div><span class="tech-pill">Docker</span> <span class="tech-pill">macOS ARM64</span> <span class="tech-pill">Verilator</span></div>
+                    </div>
+                </li>
+
+                <!-- Achievement 4 -->
+                <li>
+                    <div class="task-content">
+                        <span class="task-label">Infrastructure Fix: PR #1243</span>
+                        <p class="task-desc">Identified a critical build-blocker in <code>Dockerfile.ubuntu24.04</code> related to Python virtual environment permission propagation. Proposed and implemented a structural reordering of build stages to ensure secure ownership transfer (<code>chown</code>) while maintaining non-root container runtime security standards.</p>
+                        <div><span class="tech-pill">DevOps</span> <span class="tech-pill">Linux Permissions</span> <span class="tech-pill">Docker</span></div>
+                    </div>
+                </li>
             </ul>
         </section>
     </main>
