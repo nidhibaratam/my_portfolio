@@ -4,8 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GSoC 2026 - BlackParrot UVM</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="gsoc.css">
+    <style>
+        /* Specific header refinements for a text-first look */
+        .project-meta-grid {
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px; 
+            margin: 20px 0;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .meta-item {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        .meta-label {
+            font-weight: 700;
+            color: var(--gsoc-purple);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            display: block;
+            margin-bottom: 2px;
+        }
+    </style>
 </head>
 <body>
     <header class="gsoc-nav-header">
@@ -20,39 +43,49 @@
 
     <main class="container">
         <header class="gsoc-hero">
-            <h2>GSoC 2026 – BlackParrot UVM Testbenches</h2>
-            <p>Free and Open Source Silicon • Google Summer of Code</p>
+            <h2 style="margin-bottom: 10px;">GSoC 2026 – BlackParrot UVM Testbenches</h2>
+            <p style="font-weight: 600; opacity: 0.9;">FOSSi Foundation • Google Summer of Code • BlackParrot Ecosystem</p>
         </header>
 
         <a href="../index.html" class="btn gsoc-btn-back">← Back to Portfolio</a>
 
         <section class="card">
-            <h2 class="section-title"><i class="fas fa-info-circle"></i> About Project</h2>
-            <p><strong>BlackParrot</strong> is an open-source RISC-V multicore used to stress-test EDA tooling. This project explores <strong>Verilator's</strong> UVM support.</p>
-            <ul class="project-info-list">
-                <li><strong>Skill Level:</strong> Beginner</li>
-                <li><strong>Length:</strong> 175 hours</li>
-                <li><strong>Tools:</strong> Verilator, UVM</li>
-            </ul>
-            <a href="assets/GSoC2026BlackParrotUVMTestbenches.pdf" target="_blank" class="btn gsoc-btn"><i class="fas fa-file-pdf"></i> View Proposal</a>
+            <h2 class="section-title">Project Overview</h2>
+            <p>BlackParrot is a production-quality, open-source RISC-V multicore processor. This project focuses on developing <strong>UVM-Lite verification environments</strong> using <strong>Verilator</strong> to enhance the reliability and modularity of the BlackParrot and BaseJump STL hardware libraries.</p>
+            
+            <div class="project-meta-grid">
+                <div>
+                    <div class="meta-item"><span class="meta-label">Current Status</span>Active Contributor</div>
+                    <div class="meta-item"><span class="meta-label">Project Length</span>175 Hours</div>
+                </div>
+                <div>
+                    <div class="meta-item"><span class="meta-label">Primary Toolchain</span>Verilator, SystemVerilog, Docker</div>
+                    <div class="meta-item"><span class="meta-label">Partner Organizations</span>BlackParrot, BaseJump STL</div>
+                </div>
+            </div>
+            
+            <a href="assets/GSoC2026BlackParrotUVMTestbenches.pdf" target="_blank" class="btn gsoc-btn">Download Official Proposal</a>
         </section>
 
+        <!-- Pre-Proposal Card -->
         <div class="card">
-            <h3 class="section-title">Pre-Proposal Phase</h3>
-            <p>Initial milestones including environment setup and UVM FIFO verification.</p>
-            <a href="pre-proposal.html" class="btn gsoc-btn">View Work</a>
+            <h3 class="section-title">Pre-Proposal Foundations</h3>
+            <p>Foundational contributions including merged documentation improvements, architectural visualizations via Mermaid.js, and multi-platform environment stabilization on Apple Silicon architectures.</p>
+            <a href="pre-proposal.html" class="btn gsoc-btn">View Merged Contributions</a>
         </div>
 
+        <!-- Post-Proposal Card -->
         <div class="card">
-            <h3 class="section-title">Post-Proposal Phase</h3>
-            <p>Advanced verification strategies and BP-Stream testbench development.</p>
-            <a href="post-proposal.html" class="btn gsoc-btn">View Work</a>
+            <h3 class="section-title">Post-Proposal Development</h3>
+            <p>Advanced verification engineering focused on UVM-Lite frameworks, Ready-Valid-Yumi handshake protocols, and the strategic migration of testbenches to the BaseJump STL library.</p>
+            <a href="post-proposal.html" class="btn gsoc-btn">View Verification Work</a>
         </div>
 
+        <!-- Weekly Progress Card -->
         <div class="card">
-            <h3 class="section-title">Weekly Development</h3>
-            <p>Weekly tracking of debugging, feature additions, and learning milestones.</p>
-            <a href="weekly-progress.html" class="btn gsoc-btn">View Timeline</a>
+            <h3 class="section-title">Weekly Technical Logs</h3>
+            <p>A chronological record of debugging sessions, maintainer feedback cycles, and FOSSi Foundation outreach milestones documented throughout the development cycle.</p>
+            <a href="weekly-progress.html" class="btn gsoc-btn">View Progress Timeline</a>
         </div>
     </main>
 </body>
